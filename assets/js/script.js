@@ -91,7 +91,8 @@ $('#vid-wrapper').bind('mouseover', (e) => {
 $('#vid-wrapper').bind('mousemove', (e) => {
   let y = e.pageY - $(e.currentTarget).offset().top;
   let x = e.pageX - $(e.currentTarget).offset().left;
-  if( (y > (window.innerHeight - 0.03125 * window.innerWidth)) ) {
+  if( y > 0.53125 * window.innerWidth ) {
+    console.log('here');
     let pct = x / window.innerWidth;
     let t = Math.round(vid.duration * pct);
     let min = Math.floor(t / 60);
@@ -108,6 +109,7 @@ $('#vid-wrapper').bind('mousemove', (e) => {
 $('#vid-wrapper').bind('mouseout', () => {
   $('#pause-btn').css('visibility', 'hidden');
   $('#play-btn').css('visibility', 'hidden');
+  vidHover = false;
 });
 $('#vid-time').click( () => {
   if(vidHover) {
