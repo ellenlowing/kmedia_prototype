@@ -120,3 +120,14 @@ $('#vid-time').click( () => {
     vid.currentTime = t;
   }
 });
+if($('.main-home').length > 0) {
+  $('.mute-btns').click( () => {
+    if($('#vid-wrapper').hasClass('muted')) {
+      $('#vid-wrapper').removeClass('muted').addClass('unmuted');
+      $('#vid').prop('muted', false);
+    } else {
+      $('#vid-wrapper').removeClass('unmuted').addClass('muted');
+      $('#vid').prop('muted', true);
+    }
+  });
+}

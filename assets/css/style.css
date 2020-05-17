@@ -500,14 +500,37 @@ h1 {
 #home-video #video-gradient,
 #content-video #video-gradient {
   position: absolute;
-  left: calc(50% - 15px);
-  bottom: calc(-50vw + 15px);
-  width: 30px;
+  left: calc(50% - 4vw);
+  bottom: calc(-50vw);
+  width: 8vw;
   height: 100vw;
-  background: transparent linear-gradient(270deg, #FFFFFF 0%, #FFFFFF 20%, #00000000 100%) 0% 0% no-repeat padding-box;
+  background: transparent linear-gradient(270deg, #FFFFFF 0%, #FFFFFF 60%, #00000000 100%) 0% 0% no-repeat padding-box;
   transform: matrix(0, 1, -1, 0, 0, 0);
   opacity: 1;
   z-index: 3;
+}
+#mute-btn, #unmute-btn {
+  cursor: pointer;
+  display: none;
+  position: absolute;
+  bottom: 5.7vw;
+  left: 92.1875vw;
+  height: 2vw;
+  width: 2.6vw;
+  text-align: center;
+  z-index: 3;
+}
+.muted #unmute-btn {
+  display: block;
+}
+.muted #mute-btn {
+  display: none;
+}
+.unmuted #unmute-btn {
+  display: none;
+}
+.unmuted #mute-btn {
+  display: block;
 }
 
 
