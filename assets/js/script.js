@@ -25,17 +25,20 @@ function placeSubNav() {
 window.addEventListener('scroll', scrollHandler, true);
 function scrollHandler (e) {
   let st = document.body.scrollTop;
-  let dir = st > lst ? 0 : 1;
-  if(dir != ldir) {
-    // change of state
-    if(dir == 0) {
-      $('.nav-container').removeClass('exposed').addClass('hidden');
-    } else {
-      $('.nav-container').removeClass('hidden').addClass('exposed');
+  if(st + window.innerHeight < document.body.scrollHeight) {
+    let dir = st > lst ? 0 : 1;
+    if(dir != ldir) {
+      // change of state
+      if(dir == 0) {
+        $('.nav-container').removeClass('exposed').addClass('hidden');
+      } else {
+        $('.nav-container').removeClass('hidden').addClass('exposed');
+      }
     }
+    ldir = dir;
+    lst = st <= 0 ? 0 : st;
   }
-  ldir = dir;
-  lst = st <= 0 ? 0 : st;
+  console.log(st)
 }
 
 // Video
