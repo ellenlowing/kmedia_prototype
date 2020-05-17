@@ -561,6 +561,7 @@ h1 {
   position: relative;
   margin: 3.33vw 0;
   width: fit-content;
+  z-index: 4;
 }
 .back-button a,
 .back-button a:visited,
